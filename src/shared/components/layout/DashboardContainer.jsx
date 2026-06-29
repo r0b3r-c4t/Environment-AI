@@ -1,10 +1,7 @@
-import { NavBar } from './Navbar.jsx'
-import { Sidebar } from './Sidebar.jsx'
-
-export const DashboardContainer = () => {
+export const DashboardContainer = ({ children }) => {
   return (
-    <div >
-
+    <div className="dashboard">
+      <main className="dashboard__content">{children}</main>
     </div>
   )
 }
