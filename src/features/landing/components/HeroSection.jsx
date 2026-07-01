@@ -1,11 +1,16 @@
-export const HeroSection = () => {
-    return (
-        <section className="hero">
+import { useRef } from 'react'
+import { InteractiveGrid } from '../../../shared/components/layout/InteractiveGrid.jsx'
 
+export const HeroSection = () => {
+    const sectionRef = useRef(null)
+
+    return (
+        <section className="hero" ref={sectionRef}>
+
+            <InteractiveGrid sectionRef={sectionRef} />
             <div className="hero__grid" aria-hidden="true" />
             <div className="hero__glow" aria-hidden="true" />
 
-            {/* Columna izquierda */}
             <div className="hero__left">
                 <h1 className="hero__title">
                     Automatizamos tus procesos y escalamos tu negocio con{' '}
@@ -17,7 +22,7 @@ export const HeroSection = () => {
 
                 <p className="hero__description">
                     Transformamos la complejidad operativa de tu empresa en procesos
-                    automáticos, ágiles e inteligentes eliminando el trabajo manual
+                    automáticos, ágiles e inteligentes — eliminando el trabajo manual
                     que hace perder tiempo y dinero.
                 </p>
 
@@ -25,10 +30,8 @@ export const HeroSection = () => {
                     <button className="btn btn--primary">Cotiza gratis</button>
                     <button className="btn btn--ghost">Ver soluciones</button>
                 </div>
-
             </div>
 
-            {/* Columna derecha — imagen del equipo */}
             <div className="hero__right">
                 <div className="hero__image-wrapper">
                     <img
